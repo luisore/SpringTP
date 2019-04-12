@@ -1,18 +1,38 @@
 package demo;
+import java.lang.reflect.Method;
 
 public class Factory
 {
 	public static void main() 
 	{ 
-	   //Auto a = Factory.getObject(Auto.class); 
 	}
 
 	private static Object getObject(Class clase)
 	{
+		Class object = new Class();
 		// TODO Auto-generated method stub
-		return null;
+		return object;
 	}
+
+	
+	
+	@Retention(RetentionPolicy.RUNTIME)
+	@Target(ElementType.TYPE)
+	public @interface Component {
+	    
+	}
+
+	@Retention(RetentionPolicy.RUNTIME)
+	@Target(ElementType.TYPE)
+	public @interface Injected {
+		public int count(); // Que verifique que es una List o un Array
+	    public Class implementation(); // Solo sobre interfaces
+		public boolean singleton();
+	}
+
 }
+
+
 
 /*
 public class ShapeFactory {
