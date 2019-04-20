@@ -8,4 +8,6 @@ import java.lang.annotation.RetentionPolicy;
 public @interface Injected
 {
 	int count() default 1;
+	String implementation() default "interface";
+	int singleton() default 12;
 }
